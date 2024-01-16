@@ -6,7 +6,7 @@ DIA-NN parallelization through a 5-part analysis protocol. Based on discussions 
 
 Part 1 : `diann_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
 Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parellel.  
-Part 3 : generate an empirical spectral library, based on quantification files in part 2  
+Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
 Part 4 : second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
 Part 5 : generate final report  
 
@@ -48,7 +48,7 @@ Currently: 12 samples in parallel works for VSC-5 zen3_0512; 3-4 samples for VSC
 ```
 FILES=("$INPUT"/*.d)
 
-PART2_PARAMS = XXX # can change parameters as needed. There need to match identically to part 3
+PART2_PARAMS = XXX # can change parameters as needed. They need to match identically to part 3
 
 for FILE in "${FILES[@]}"; do
     BASENAME_FILE=$(basename "$FILE" .d) #extract basename for each mass spec `.d` file repository
@@ -68,7 +68,27 @@ Notes
 * Default `pwait 12`, can adjust depending on the node configuration
 * Parameters need to be an identical to part 3 (including integer vs floats), otherwise it will re-run quantification step (but not in parallel).
 * Unclear if all files need to be in the same repository; they were all moved to one folder during de-bugging process and not retested in their original folders.
+* Longest processing step, parallelization here is key.
 
+## Part 3 Empirical spec lib
 
+Based on the quantification files generted in part 2, `dia-nn_parallel_part3.sh` generates a new "empirical" spectral library to be used for the second pass quantification.
 
-`diann_buildspeclib.sh`
+Notes
+* If quantification files are being generated again, it is (very likely) because there is a mis-match with the parameters between part 2 and part 3
+* Job should only take ~10-15 min to run with pre-quantified files
+* `--f` only required for naming purposes. Originally files don't actually need to be accessible (according to Vadim, see github issue discussions above) 
+
+## Part 4 Second Quantification
+
+Notes
+* Quantification significantly shorter than part 2, not yet optimized for memory usage per node
+* Requires manual input from part 3 log for a few flags, see script for notes
+* MB run took ~3 hours with current set-up. Can probably be faster with tweaks.
+* `--f` only required for naming purposes, see github issue discussions above
+
+## Part 5 Report Generation
+* Like Part 3, takes ~10-15 min.
+* Report generation tweaked of --pg-level 1 and --verbose 1 to match dia-nn ui version
+* `--q-value 0.01` specified here, unclear if UI default is also used here, so set explicitly
+* `--f` only required for naming purposes, see github issue discussions above
