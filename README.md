@@ -48,7 +48,7 @@ Currently: 12 samples in parallel works for VSC-5 zen3_0512; 3-4 samples for VSC
 Generate a general spectral library based on FASTAs
 
 Notes
-* Specified `--min-pr-mz 400 --max-pr-mz 1250` to match part 2. Unclear if this increases quantification speed due to slightly smaller overall spectral library?
+* Can specify `--min-pr-mz XXX --max-pr-mz XXX` to match part 2. Unclear if this increases quantification speed due to slightly smaller overall spectral library?
 
 ## Part 2 Quantification
 
