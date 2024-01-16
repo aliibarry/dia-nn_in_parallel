@@ -4,7 +4,7 @@ _with input from Feng Xian_
 
 DIA-NN parallelization through a 5-part analysis protocol. Based on discussions in https://github.com/bigbio/quantms/issues/164.
 
-Part 1 : `diann_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
+Part 1 : `dia-nn_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
 Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parellel.  
 Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
 Part 4 : `dia-nn_parallel_part4-5.sh`: second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
@@ -42,6 +42,13 @@ Currently: 12 samples in parallel works for VSC-5 zen3_0512; 3-4 samples for VSC
 * queue times for VSC-4 fat nodes were a few days (tried before christmas, likely shorter outside of peak usage times)
 * `zen3_0512` is a standard vsc-5 node, other options available with more memory if needed. Wait times ranged between 10 sec to 3 days for 72 hr jobs; single node 
 ***
+
+## Part 1 Spectral library
+
+Generate a general spectral library based on FASTAs
+
+Notes
+* Specified `--min-pr-mz 400 --max-pr-mz 1250` to match part 2. Unclear if this increases quantification speed due to slightly smaller overall spectral library?
 
 ## Part 2 Quantification
 
