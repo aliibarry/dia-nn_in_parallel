@@ -7,8 +7,8 @@ DIA-NN parallelization through a 5-part analysis protocol. Based on discussions 
 Part 1 : `diann_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
 Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parellel.  
 Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
-Part 4 : second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
-Part 5 : generate final report  
+Part 4 : dia-nn_parallel_part4-5.sh`: second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
+Part 5 : dia-nn_parallel_part4-5.sh`: generate final report; can also run separately
 
 Set output folder ($OUT). Part3 spec-lib and final results saved in main output folder. Quantification files saved in $PART2 or $PART4 subdirectories. 
 
