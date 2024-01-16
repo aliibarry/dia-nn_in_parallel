@@ -20,7 +20,12 @@ mkdir "timsTOF/libs/hg-yeast"
 
 OUT="timsTOF/libs/hg-yeast"
 
-#step1 - generate .speclib based off fasta, no experimental ms data files requires
+# for mouse microbiome
+# --fasta timsTOF/fasta/Combined_proteins_48970.fasta \
+# --fasta timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta \
+
+# example from human-yeast ground truth
+# step1 - generate .speclib based off fasta, no experimental ms data files requires
 ./bin/diann-1.8.1 --gen-spec-lib --predictor --fasta-search \
 	--fasta timsTOF/fasta/20231212_uniprot_hg_559292.fasta \
 	--fasta timsTOF/fasta/20231212_uniprot_yeast_9606.fasta \
