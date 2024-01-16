@@ -69,13 +69,15 @@ Notes
 * Parameters need to be an identical to part 3 (including integer vs floats), otherwise it will re-run quantification step (but not in parallel).
 * Unclear if all files need to be in the same repository; they were all moved to one folder during de-bugging process and not retested in their original folders.
 * Longest processing step, parallelization here is key.
+* `--min-corr 2.0 --corr-diff 1.0 --time-corr-only`: Low RAM & high speed mode, recommended by Vadim for parallelization
+
 
 ## Part 3 Empirical spec lib
 
 Based on the quantification files generted in part 2, `dia-nn_parallel_part3.sh` generates a new "empirical" spectral library to be used for the second pass quantification.
 
 Notes
-* If quantification files are being generated again, it is (very likely) because there is a mis-match with the parameters between part 2 and part 3
+* If quantification files are being generated again, it is (very likely) because there is a mis-match with the parameters between part 2 & 3
 * Job should only take ~10-15 min to run with pre-quantified files
 * `--f` only required for naming purposes. Originally files don't actually need to be accessible (according to Vadim, see github issue discussions above) 
 
@@ -83,12 +85,13 @@ Notes
 
 Notes
 * Quantification significantly shorter than part 2, not yet optimized for memory usage per node
-* Requires manual input from part 3 log for a few flags, see script for notes
-* MB run took ~3 hours with current set-up. Can probably be faster with tweaks.
+* Requires manual input from part 3 log for a few flags, see script for notes. Not currently automated
+* MB run took ~3 hours with current set-up. Can probably be faster with parallelization tweaks.
 * `--f` only required for naming purposes, see github issue discussions above
 
 ## Part 5 Report Generation
 * Like Part 3, takes ~10-15 min.
-* Report generation tweaked of --pg-level 1 and --verbose 1 to match dia-nn ui version
+* Report generation tweaked of `--pg-level 1` and `--verbose 1` to match dia-nn ui version
 * `--q-value 0.01` specified here, unclear if UI default is also used here, so set explicitly
 * `--f` only required for naming purposes, see github issue discussions above
+* `--relaxed-prot-inf` is similar to the protein inference used in Fragpipe and can be added, but omitted here (feedback from FX to use default DIA-NN algorithm)
