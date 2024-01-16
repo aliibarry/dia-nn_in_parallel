@@ -74,6 +74,7 @@ Notes
 * Unclear if all files need to be in the same repository; they were all moved to one folder during de-bugging process and not retested in their original folders.
 * Longest processing step, parallelization here is key.
 * `--min-corr 2.0 --corr-diff 1.0 --time-corr-only`: Low RAM & high speed mode, recommended by Vadim for parallelization
+* for PTM add `--var-mod declaration` and `--monitor-mod`
 
 
 ## Part 3 Empirical spec lib
