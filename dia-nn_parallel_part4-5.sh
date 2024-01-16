@@ -61,11 +61,11 @@ done
 	--fasta timsTOF/fasta/Combined_proteins_48970.fasta \
         --fasta timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta \
        	$F_OPTIONS \
-	--threads 2 --verbose 3 \
+	--threads 2 --verbose 1 \
 	--individual-windows --quick-mass-acc \
 	--individual-mass-acc \
 	--temp $PART4 \
-       	--relaxed-prot-inf --pg-level 2 \
+       	--qvalue 0.01 --pg-level 1 \
 	--use-quant --matrices \
 	--out $OUT/diann_report.tsv
 
