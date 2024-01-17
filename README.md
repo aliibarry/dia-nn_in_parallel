@@ -88,7 +88,8 @@ Based on the quantification files generted in part 2, `dia-nn_parallel_part3.sh`
 Notes
 * If quantification files are being generated again, it is (very likely) because there is a mis-match with the parameters between part 2 & 3
 * Job should only take ~10-15 min to run with pre-quantified files
-* `--f` only required for naming purposes. Originally files don't actually need to be accessible (according to Vadim, see github issue discussions above) 
+* `--f` only required for naming purposes. Originally files don't actually need to be accessible (according to Vadim, see github issue discussions above)
+* Output log line for "Averaged recommended settings for this experiment: Mass accuracy = XXppm, MS1 accuracy = Xppm, Scan window = X" used for part 4 paramters
 
 ## Part 4 Second Quantification
 
