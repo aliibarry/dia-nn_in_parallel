@@ -43,8 +43,9 @@ Currently: 12 samples in parallel works for VSC-5 zen3_0512; 3-4 samples for VSC
 * `zen3_0512` is a standard vsc-5 node. Wait times ranged between 10 sec to 3 days for 72 hr jobs; single node. 512 GB RAM
 * Test run on `zen3_1024` with `pwait 24` had minimal queue time (11 and 36 seconds, only tried twice). 1 TB RAM
 * Test run on `zen3_2048` with `pwait 48` had minimal queue time (1 second, only tried once). 2 TB RAM
+    * Extremely slow per-sample timing, as CPU isn't increased on fat nodes. Overall processing time isn't faster running so many samples in parallel on a single node. 
 * Full node details available at https://wiki.vsc.ac.at/doku.php?id=doku:vsc5_queue.
-* 
+  
 ***
 
 ## Part 1 Spectral library
