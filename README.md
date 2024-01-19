@@ -49,7 +49,7 @@ Currently: 12 samples in parallel works for VSC-5 zen3_0512; 3-4 samples for VSC
 
 ## Part 1 Spectral library
 
-Generate a general spectral library based on FASTAs. Only need to run once, but can specify `--min-pr-mz XXX --max-pr-mz XXX` to match part 2. Unclear if this increases quantification speed due to slightly smaller overall spectral library?
+Generate a general spectral library based on FASTAs. Only need to run once, but can specify `--min-pr-mz XXX --max-pr-mz XXX` to match part 2. For reduced search spaces, can re-run with modified paramters as it will increase quantification speed due to smaller overall spectral library. Takes 6-24 hours, depending on the FASTAs providing + size of the search space (possibly longer, without providing an `--min-pr-mz XXX --max-pr-mz XXX`).
 
 ## Part 2 Quantification
 
