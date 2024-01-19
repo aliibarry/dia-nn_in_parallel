@@ -75,6 +75,7 @@ Notes
 * DIA-NN runs with individial output logs for each file (overall output file difficult to read due to parallelization)
 * Will skip files that have already been processed (eg. if the job has timed out, and needs to be restarted)
 * Default `pwait 12`, can probably up to 15 for default config, and adjust higher depending on the node configuration
+    * need about 25-30 GB RAM per sample, but on fat nodes # threads still important for speed.   
 * Parameters need to be an identical to part 3 (including integer vs floats), otherwise it will re-run quantification step (but not in parallel).
 * Unclear if all files need to be in the same repository; they were all moved to one folder during de-bugging process and not retested in their original folders.
 * Longest processing step, parallelization here is key.
