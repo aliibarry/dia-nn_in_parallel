@@ -1,0 +1,64 @@
+Giacomo weaning study. m/z 400-1200. Mouse + microbiome FASTAs
+DIA-NN 1.8.1 (Data-Independent Acquisition by Neural Networks)
+Compiled on Apr 15 2022 08:45:18
+Current date and time: Tue Feb 20 15:45:53 2024
+Logical CPU cores: 256
+In silico digest will involve cuts at K*,R*
+Modification UniMod:35 with mass delta 15.9949 at M will be considered as variable
+Modification UniMod:1 with mass delta 42.0106 at *n will be considered as variable
+Min precursor m/z set to 400
+Max precursor m/z set to 1200
+Min fragment m/z set to 100
+Max fragment m/z set to 1700
+Thread number set to 128
+Maximum number of missed cleavages set to 2
+Min peptide length set to 7
+Max peptide length set to 50
+Min precursor charge set to 2
+Max precursor charge set to 4
+Maximum number of variable modifications set to 2
+Only peaks with correlation sum exceeding 2 will be considered
+Peaks with correlation sum below 1 from maximum will not be considered
+The spectral library (if generated) will retain the original spectra but will include empirically-aligned RTs
+Existing .quant files will be used
+A fast algorithm will be used to select the MS2 mass accuracy setting
+Mass accuracy will be determined separately for different runs
+Scan windows will be inferred separately for different runs
+A spectral library will be generated
+DIA-NN will optimise the mass accuracy separately for each run in the experiment. This is useful primarily for quick initial analyses, when it is not yet known which mass accuracy setting works best for a particular acquisition scheme.
+The following variable modifications will be scored: UniMod:1 
+Unless the spectral library specified was created by this version of DIA-NN, it's strongly recommended to specify a FASTA database and use the 'Reannotate' function to allow DIA-NN to identify peptides which can originate from the N/C terminus of the protein: otherwise site localisation might not work properly for modifications of the protein N-terminus or for modifications which do not allow enzymatic cleavage after the modified residue
+
+239 files will be processed
+[0:00] Loading spectral library timsTOF/libs/weaning/lib.predicted.speclib
+[0:10] Library annotated with sequence database(s): timsTOF/fasta/Microbial_Combined_proteins_48970.fasta; timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta
+[0:10] Protein names missing for some isoforms
+[0:10] Gene names missing for some isoforms
+[0:10] Library contains 17129 proteins, and 16776 genes
+[0:14] Spectral library loaded: 66099 protein isoforms, 175496 protein groups and 18482786 precursors in 9587263 elution groups.
+[0:22] Initialising library
+
+[0:51] Cross-run analysis
+[0:51] Reading quantification information: 239 files
+[0:58] Averaged recommended settings for this experiment: Mass accuracy = 11ppm, MS1 accuracy = 15ppm, Scan window = 9
+[0:58] Quantifying peptides
+[1:31] Assembling protein groups
+[1:37] Quantifying proteins
+[1:39] Calculating q-values for protein and gene groups
+[2:03] Calculating global q-values for protein and gene groups
+[2:03] Writing report
+[3:10] Report saved to report.tsv.
+[3:10] Stats report saved to report.stats.tsv
+[3:10] Generating spectral library:
+[3:10] Saving spectral library to weaning_study/empirical_library.tsv
+[3:20] 161012 precursors saved
+[3:20] Loading the generated library and saving it in the .speclib format
+[3:20] Loading spectral library weaning_study/empirical_library.tsv
+[3:23] Spectral library loaded: 46540 protein isoforms, 59869 protein groups and 161012 precursors in 149893 elution groups.
+[3:23] Protein names missing for some isoforms
+[3:23] Gene names missing for some isoforms
+[3:23] Library contains 0 proteins, and 0 genes
+[3:23] Saving the library to weaning_study/empirical_library.tsv.speclib
+[3:23] Log saved to report.log.txt
+Finished
+

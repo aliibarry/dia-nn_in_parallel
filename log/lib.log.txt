@@ -1,0 +1,39 @@
+DIA-NN 1.8.1 (Data-Independent Acquisition by Neural Networks)
+Compiled on Apr 15 2022 08:45:18
+Current date and time: Fri Feb  9 10:06:56 2024
+Logical CPU cores: 256
+./bin/diann-1.8.1 --gen-spec-lib --predictor --fasta-search --threads 128 --fasta timsTOF/fasta/Microbial_Combined_proteins_48970.fasta --fasta timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta --cut K*,R* --missed-cleavages 2 --min-pep-len 7 --max-pep-len 50 --min-pr-mz 400 --max-pr-mz 1200 --min-pr-charge 2 --max-pr-charge 4 --var-mods 2 --var-mod UniMod:35,15.994915,M --var-mod UniMod:1,42.010565,*n --monitor-mod UniMod:1 --out timsTOF/libs/weaning 
+
+A spectral library will be generated
+Deep learning will be used to generate a new in silico spectral library from peptides provided
+Library-free search enabled
+Thread number set to 128
+In silico digest will involve cuts at K*,R*
+Maximum number of missed cleavages set to 2
+Min peptide length set to 7
+Max peptide length set to 50
+Min precursor m/z set to 400
+Max precursor m/z set to 1200
+Min precursor charge set to 2
+Max precursor charge set to 4
+Maximum number of variable modifications set to 2
+Modification UniMod:35 with mass delta 15.9949 at M will be considered as variable
+Modification UniMod:1 with mass delta 42.0106 at *n will be considered as variable
+Exclusion of fragments shared between heavy and light peptides from quantification is not supported in FASTA digest mode - disabled; to enable, generate an in silico predicted spectral library and analyse with this library
+The following variable modifications will be scored: UniMod:1 
+
+0 files will be processed
+[0:00] Loading FASTA timsTOF/fasta/Microbial_Combined_proteins_48970.fasta
+[0:04] Loading FASTA timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta
+[0:16] Processing FASTA
+[0:56] Assembling elution groups
+[1:19] 18482786 precursors generated
+[1:20] Protein names missing for some isoforms
+[1:20] Gene names missing for some isoforms
+[1:20] Library contains 17129 proteins, and 16776 genes
+[1:24] [2:06] [17:44] [19:49] [20:14] [20:29] Saving the library to lib.predicted.speclib
+[20:53] Initialising library
+
+
+Finished
+
