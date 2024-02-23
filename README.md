@@ -16,7 +16,7 @@ Set output folder ($OUT). Part3 spec-lib and final results saved in main output 
 PART2="$OUT/part2"
 PART4="$OUT/part4"
 ```
-
+Slurm output logs for part2 and part4 contain overlapping outputs due to parallelization. Part2 quantificant logs are therefore also generated independantly per sample to facilitate qc checks. 
 
 ***
 ## Memory allocation
