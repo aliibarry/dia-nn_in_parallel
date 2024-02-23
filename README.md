@@ -5,7 +5,7 @@ _with input from Feng Xian_
 DIA-NN parallelization through a 5-part analysis protocol. Based on discussions in https://github.com/bigbio/quantms/issues/164.
 
 Part 1 : `dia-nn_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
-Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parellel.  
+Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parallel.  
 Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
 Part 4 : `dia-nn_parallel_part4-5.sh`: second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
 Part 5 : `dia-nn_parallel_part4-5.sh`: generate final report; can also run separately
