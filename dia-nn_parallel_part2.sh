@@ -11,12 +11,6 @@
 ##############################################
 module purge
 
-module load python/3.9.15-gcc-12.2.0-3sr5utz #vsc5
-#module load anaconda3/2022.05-gcc-12.2.0-oqiw76n
-source activate $DATA/myenv
-
-#module load openjdk/11.0.17_8-gcc-12.2.0-o2utqnb #updated java
-
 function pwait() {
     while [ $(jobs -p | wc -l) -ge $1 ]; do
         sleep 1
@@ -52,6 +46,8 @@ done
 
 ################################################
 
+# --min-corr 2.0 --corr-diff 1.0 --time-corr-only \ for high speed, low RAM mode (re. Vadim recommendation) 
+
 PART2_PARAMS="--cut K*,R* --var-mod UniMod:35,15.994915,M --var-mod UniMod:1,42.010565,*n --monitor-mod UniMod:1 \
         --lib $LIB/lib.predicted.speclib \
         --min-pr-mz 400 --max-pr-mz 1250 --min-fr-mz 100 --max-fr-mz 1700 \
@@ -60,10 +56,9 @@ PART2_PARAMS="--cut K*,R* --var-mod UniMod:35,15.994915,M --var-mod UniMod:1,42.
         --min-pr-charge 2 --max-pr-charge 4 --var-mods 2 --verbose 3 \
         --individual-windows \
         --temp $PART2 \
-        --min-corr 2.0 --corr-diff 1.0 \
+        --min-corr 2.0 --corr-diff 1.0 --time-corr-only \ 
         --quick-mass-acc \
-        --individual-mass-acc \
-        --time-corr-only"
+        --individual-mass-acc"
 
 ### step2 - analysing each run separately with the in silico library generated in step 1, generate quant files
 
