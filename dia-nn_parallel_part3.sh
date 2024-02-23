@@ -11,21 +11,20 @@
 
 module purge
 
-module load anaconda3/2022.05-gcc-12.2.0-oqiw76n
-source activate $DATA/myenv
-
-module load openjdk/11.0.17_8-gcc-12.2.0-o2utqnb #updated java
-
-
+# adjust directories as needed
 LIB="timsTOF/libs"
 INPUT="timsTOF/2023/334_samples"
 OUT="mb_ms_longitudinal"
+
+####################################
+# automatically set locations to match other parts
 
 PART2="$OUT/part2"
 PART4="$OUT/part4"
 
 FILES=("$INPUT"/*.d)
 OUTPUT_FILES=("$OUT/part2"/*.quant)
+####################################
 
 #step3 Assemble an empirical .tsv spectral library from the .quant files. need --rt-profiling and --use-quant.
 COMMON_PARAMS="--lib $LIB/lib.predicted.speclib \
