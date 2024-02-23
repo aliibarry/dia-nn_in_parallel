@@ -11,16 +11,12 @@
 
 module purge
 
-module load anaconda3/2022.05-gcc-12.2.0-oqiw76n
-source activate $DATA/myenv
-
 function pwait() {
     while [ $(jobs -p | wc -l) -ge $1 ]; do
         sleep 1
     done
 }
 
-#module load openjdk/11.0.17_8-gcc-12.2.0-o2utqnb #updated java
 
 LIB="timsTOF/libs"
 INPUT="timsTOF/2023/334_samples"
@@ -32,7 +28,7 @@ PART4="$OUT/part4"
 FILES=("$INPUT"/*.d)
 OUTPUT_FILES=("$OUT/part2"/*.quant)
 
-### need a better approach for setting --mass-acc et al. 
+### need a better approach for setting --mass-acc et al. Currently need to manually extract from log of part3.
 
 #step4 - second quantification using empirical library 
 COMMON_PARAMS="--lib $OUT/empirical_library.tsv \
@@ -49,7 +45,7 @@ done
 
 wait
 
-#part5
+# part5
 F_OPTIONS=""
 for FILE_PATH in "${FILES[@]}"; do
     FILENAME=$(basename "$FILE_PATH" .d)
