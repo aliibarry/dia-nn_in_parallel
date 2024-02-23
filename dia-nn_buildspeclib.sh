@@ -10,14 +10,7 @@
 
 module purge
 
-module load anaconda3/2022.05-gcc-12.2.0-oqiw76n
-source activate $DATA/myenv
-
-module load openjdk/11.0.17_8-gcc-12.2.0-o2utqnb #updated java
-
-
 mkdir "timsTOF/libs/hg-yeast"
-
 OUT="timsTOF/libs/hg-yeast"
 
 # for mouse microbiome
