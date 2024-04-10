@@ -108,3 +108,8 @@ Notes
 * `--q-value 0.01` specified here, unclear if UI default is also used here, so set explicitly
 * `--f` only required for naming purposes, see github issue discussions above
 * `--relaxed-prot-inf` is similar to the protein inference used in Fragpipe and can be added, but omitted here (feedback from FX to use default DIA-NN algorithm)
+
+## Debugging
+Sample errors, updated as they arise
+* Excessively long run time per sample; check MS QC - is it worth omitting the file already?
+* Exit Code 139, `segmentation fault`; check to ensure only DIA files are in the directory.
