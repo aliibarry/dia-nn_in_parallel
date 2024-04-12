@@ -2,6 +2,8 @@
 
 _with input from Feng Xian_
 
+For shorter jobs, samples can be processed in serial (`dia-nn_sampleserial.sh`). Run time depends on search space, can likely run 50-100 samples within 72 hr vsc timelimit.   
+
 DIA-NN parallelization through a 5-part analysis protocol. Based on discussions in https://github.com/bigbio/quantms/issues/164.
 
 Part 1 : `dia-nn_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
