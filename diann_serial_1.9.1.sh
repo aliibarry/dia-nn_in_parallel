@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J diann_denovo
+#SBATCH -J diann
 #SBATCH -N 1
 #SBATCH --cpus-per-task=128
 #SBATCH --partition=zen3_2048 #zen3_0512 #skylake_0096
@@ -13,8 +13,8 @@ module purge
 
 # --------------------------------------------------------------
 
-mkdir denovo/
-OUT='/data/denovo/'
+mkdir outputdir
+OUT='/data/outputdir/'
 
 module load singularity/3.8.7-gcc-12.2.0-h4t6dps
 cd /gpfs/data/fs72233/barrya/ #have to be in data, use relative paths from there
