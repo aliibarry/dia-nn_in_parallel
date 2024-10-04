@@ -1,3 +1,8 @@
+# Serial processing of DIA-NN
+Example scripts available:  
+1.8.1 `dia-nn_sampleserial.sh`  
+1.9.1 `dia-nn_sampleserial_1.9.1.sh` run through singularity
+
 # Parallelization of DIA-NN
 
 _with input from Feng Xian_
