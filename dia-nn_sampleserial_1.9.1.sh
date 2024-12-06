@@ -29,7 +29,7 @@ singularity exec --env LANG=C.UTF-8,LC_ALL=C.UTF-8 -B ${PWD}:/data /gpfs/data/fs
 	--fasta /data/timsTOF/fasta/Combined_fasta_53502Sequences_MGnify.fasta \
 	--fasta /data/timsTOF/fasta/crap.fasta \
 	--fasta /data/timsTOF/fasta/Mouse_uniprot-proteome_UP000000589_2023.04.27.fasta \
-	--threads 128 --verbose 1 --qvalue 0.01 --matrices \
+	--threads 128 --verbose 1 --qvalue 0.01 \
 	--min-fr-mz 100 --max-fr-mz 1700 \
 	--out $OUT/report.tsv \
 	--out-lib $OUT/report-lib.tsv \
