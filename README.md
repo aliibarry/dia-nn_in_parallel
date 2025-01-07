@@ -1,7 +1,7 @@
 # Serial processing of DIA-NN
 Example scripts available:  
-1.8.1 `dia-nn_sampleserial.sh`  
-1.9.1 `dia-nn_sampleserial_1.9.1.sh` run through singularity
+1.8.1 `/1.8.1/dia-nn_sampleserial.sh`  
+1.9.1 `/1.9.1/dia-nn_sampleserial_1.9.1.sh` run through singularity
 
 # Parallelization of DIA-NN
 
@@ -11,12 +11,6 @@ For shorter jobs, samples can be processed in serial (`dia-nn_sampleserial.sh`).
 
 DIA-NN parallelization through a 5-part analysis protocol. Based on discussions in https://github.com/bigbio/quantms/issues/164.
 
-Part 1 : `dia-nn_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
-Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parallel.  
-Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
-Part 4 : `dia-nn_parallel_part4-5.sh`: second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
-Part 5 : `dia-nn_parallel_part4-5.sh`: generate final report; can also run separately
-
 Set output folder ($OUT). Part3 spec-lib and final results saved in main output folder. Quantification files saved in $PART2 or $PART4 subdirectories. 
 
 ```
@@ -24,6 +18,17 @@ PART2="$OUT/part2"
 PART4="$OUT/part4"
 ```
 Slurm output logs for part2 and part4 contain overlapping outputs due to parallelization. Part2 quantificant logs are therefore also generated independantly per sample to facilitate qc checks. 
+
+### 1.8.1
+For diann1.8.1, see scripts in `1.8.1`:  
+Part 1 : `dia-nn_buildspeclib.sh`: generate a spectral library based on FASTA. Only needs to be run once per FASTA combination  
+Part 2 : `dia-nn_parallel_part2.sh`: initial quantification step, runs in parallel.  
+Part 3 : `dia-nn_parallel_part3.sh`: generate an empirical spectral library, based on quantification files in part 2  
+Part 4 : `dia-nn_parallel_part4-5.sh`: second pass quantification; requires flag inputs from part 3 for mass-acc, etc. Currently manual.  
+Part 5 : `dia-nn_parallel_part4-5.sh`: generate final report; can also run separately
+
+### 1.9.1
+For diann1.9.1, see scripts in `1.9.1` for example scripts adjusted for use with singularity. 
 
 ***
 ## Memory allocation
